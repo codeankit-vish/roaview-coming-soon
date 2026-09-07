@@ -1,0 +1,417 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    background:url("hero.png") center center/cover no-repeat;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    overflow:hidden;
+    position:relative;
+
+    animation:zoom 18s ease-in-out infinite alternate;
+
+}
+
+/* ---------- Overlay ---------- */
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.60) 0%,
+        rgba(0,0,0,.40) 35%,
+        rgba(0,0,0,.18) 70%,
+        rgba(0,0,0,.08) 100%
+    );
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+    width:100%;
+    padding:80px;
+    position:relative;
+    z-index:5;
+
+}
+
+.content{
+
+    max-width:720px;
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+/* ---------- Logo ---------- */
+
+.logo{
+
+    color:#D4AF37;
+
+    font-size:18px;
+
+    letter-spacing:12px;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+    text-shadow:0 0 15px rgba(212,175,55,.4);
+
+}
+
+/* ---------- Heading ---------- */
+
+h1{
+
+    font-size:72px;
+
+    color:white;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    margin-bottom:22px;
+
+    text-shadow:0 6px 25px rgba(0,0,0,.55);
+
+}
+
+/* ---------- Subtitle ---------- */
+
+.subtitle{
+
+    color:#ececec;
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+    font-weight:300;
+
+}
+
+/* ---------- Launch ---------- */
+
+.launch{
+
+    color:#D4AF37;
+
+    font-size:22px;
+
+    margin-bottom:50px;
+
+    font-weight:500;
+
+}
+
+.launch span{
+
+    font-weight:700;
+
+}
+
+/* ---------- Countdown ---------- */
+
+.countdown{
+
+    display:flex;
+
+    gap:22px;
+
+    margin-bottom:55px;
+
+    flex-wrap:wrap;
+
+}
+
+.box{
+
+    width:155px;
+
+    height:155px;
+
+    border-radius:22px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+}
+
+.box:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF37;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35),
+    0 0 30px rgba(212,175,55,.35);
+
+}
+
+.box h2{
+
+    color:white;
+
+    font-size:56px;
+
+    margin-bottom:10px;
+
+}
+
+.box span{
+
+    color:#D4AF37;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/* ---------- Buttons ---------- */
+
+.buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    padding:17px 38px;
+
+    border-radius:60px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+    font-size:16px;
+
+}
+
+.primary{
+
+    background:#D4AF37;
+
+    color:#111;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 35px rgba(212,175,55,.55);
+
+}
+
+.secondary{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.secondary:hover{
+
+    background:white;
+
+    color:#111;
+
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        background-size:100%;
+
+    }
+
+    to{
+
+        background-size:108%;
+
+    }
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:991px){
+
+.hero{
+
+padding:50px 35px;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+.box{
+
+width:120px;
+height:120px;
+
+}
+
+.box h2{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+
+padding:30px 20px;
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+.logo{
+
+letter-spacing:8px;
+
+font-size:15px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.launch{
+
+font-size:18px;
+
+}
+
+.countdown{
+
+justify-content:center;
+
+}
+
+.box{
+
+width:95px;
+
+height:95px;
+
+}
+
+.box h2{
+
+font-size:30px;
+
+}
+
+.box span{
+
+font-size:11px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
