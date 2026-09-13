@@ -62,27 +62,25 @@ const timer = setInterval(updateCountdown, 1000);
 const boxes = document.querySelectorAll(".box");
 
 boxes.forEach((box, index) => {
-
-    box.style.animation = `float 3s ease-in-out ${index * 0.2}s infinite`;
-
+    box.style.animation = `float 3.5s ease-in-out ${index * 0.25}s infinite`;
 });
 
 // =========================================
-// BUTTON RIPPLE EFFECT
+// INTERACTIVE BUTTON FEEDBACK
 // =========================================
 
 document.querySelectorAll(".btn").forEach(button => {
+    // Light magnetic / tilt micro-interaction on desktop only
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        button.addEventListener("mousemove", (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            button.style.transform = `translate(${x * 0.15}px, ${y * 0.2 - 4}px) scale(1.02)`;
+        });
 
-    button.addEventListener("mouseenter", () => {
-
-        button.style.transform = "translateY(-4px) scale(1.03)";
-
-    });
-
-    button.addEventListener("mouseleave", () => {
-
-        button.style.transform = "translateY(0) scale(1)";
-
-    });
-
+        button.addEventListener("mouseleave", () => {
+            button.style.transform = "";
+        });
+    }
 });
